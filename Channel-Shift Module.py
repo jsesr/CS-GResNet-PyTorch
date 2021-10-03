@@ -2,7 +2,7 @@ import torch.nn as nn
 from Args.args import ARGS
 import numpy as np
 
-# 取每个layer的最后一层的hw
+# Take the hw of the last layer of each layer
 HW_Layer = {
     'layer1': [56, 56, 64],
     'layer2': [28, 28, 128],
@@ -43,7 +43,7 @@ class ChannelShift(nn.Module):
         elif strategy == 'end':
             i = n_div - 2
         elif strategy == 'stochastic':
-            # 从hw中随机选取2*self.fold个数
+            # Randomly select the number of 2*self.fold from hw
             i = np.random.choice(np.arange(hw), 2 * self.fold, replace=False)
             self.init_conv_stochastic(i, hw)
             return
@@ -88,7 +88,7 @@ def make_channel_shift(net):
 
 
 def make_BasicBlock_shift(stage, hwc, n_div):
-    # 在每一个blocks的最后一个conv进行channel shift
+    # Perform channel shift at the last conv of each block
     blocks = list(stage.children())
     if ARGS.TSM_channel_enhance == 1:
         blocks[-1] = ChannelShift(blocks[-1], n_div=n_div)
