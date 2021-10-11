@@ -255,10 +255,8 @@ class ResNet(nn.Module):
 
 
 def modify_input(input):
-    # 读取视频数据
     if len(input.size()) == 6:
         # input.shape:[bs, num_segment, num_frame_in_segment, c, h, w]
-        # 因为TSM是每一个segment里面抽取一帧
         assert input.shape[2] == 1, 'models.py/modify_input()'
         input = input.squeeze(dim=2)
 
