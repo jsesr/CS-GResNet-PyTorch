@@ -6,4 +6,7 @@ We have released the core codes of our proposed model and the whole codes are co
 Update for the Rebuttal
 -------  
 **Class Activation Mapping (CAM)**
-![2022-01-05_101514](https://user-images.githubusercontent.com/41797448/148149952-a5b3f591-d2a3-48b5-8f00-ce966458fe04.jpg)
+![2022-01-05_102847](https://user-images.githubusercontent.com/41797448/148151228-e2ec4e82-4565-436e-bb08-ccca8b0279a3.jpg)
+
+**Accuracy (%) with He initialization**
+![2022-01-05_101703](https://user-images.githubusercontent.com/41797448/148150659-2426dc84-38d0-44ed-81f8-c84ab8757db1.jpg)
